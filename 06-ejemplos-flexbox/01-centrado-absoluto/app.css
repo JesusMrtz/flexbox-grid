@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(red, blue);
+}
+
+h1 {
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  color: rgb(241, 203, 203);
+  flex-basis: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.5s;
+}
+
+h1::before,
+h1::after {
+  content: '';
+  display: block;
+  height: 5px;
+  background-image: linear-gradient(to right, green 50%, yellow 50%);
+  transition: background-image .5s ease-in-out;
+
+  flex: 1;
+}
+
+h1::before {
+  margin-right: 1rem;
+}
+
+h1::after {
+  margin-left: 1rem;
+  background-image: linear-gradient(to left, green 50%, yellow 50%);
+  transition: all .5s ease-in-out;
+}
+
+h1:hover span {
+  color: white;
+  box-shadow: 0 8px 6px -6px;
+
+  transition: all .2s;
+  cursor: pointer;
+}
+
+h1:hover::before {
+  animation: changeGradient2 .3s;
+  background-image: linear-gradient(to left, green 50%, yellow 50%);
+}
+
+h1:hover::after {
+  animation: changeGradient .3s;
+  background-image: linear-gradient(to right, green 50%, yellow 50%);
+}
+
+
+@keyframes changeGradient {
+  0% {
+    background-image: linear-gradient(to right, yellow 75%, green 75%);
+  }
+  50% {
+    background-image: linear-gradient(to right, yellow 100%, green 0%);
+  }
+
+  75% {
+    background-image: linear-gradient(to right, green 25%, yellow 25%);
+  }
+  100% {
+    background-image: linear-gradient(to right, green 50%, yellow 50%);
+  }
+}
+
+@keyframes changeGradient2 {
+  0% {
+    background-image: linear-gradient(to left, yellow 75%, green 75%);
+  }
+  50% {
+    background-image: linear-gradient(to left, yellow 100%, green 0%);
+  }
+
+  75% {
+    background-image: linear-gradient(to left, green 25%, yellow 25%);
+  }
+  100% {
+    background-image: linear-gradient(to left, green 50%, yellow 50%);
+  }
+}

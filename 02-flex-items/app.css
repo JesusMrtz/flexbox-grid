@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  align-content: center;
+  align-items: center;
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  font-size: 2.5em;
+  height: 200px;
+  justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.container::before,
+.container::after {
+  background-image: linear-gradient(to right, red, yellow);
+  content: "";
+  display: block;
+  flex: 1;
+  height: 5px;
+}
+
+.container::before {
+  margin-right: 1rem;
+}
+
+.container::after {
+  background-image: linear-gradient(to left, red, yellow);
+  margin-left: 1rem;
+}

@@ -1,0 +1,51 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+.container {
+  display: flex;
+  font-size: 3em;
+  background-color: yellow;
+}
+
+.item {
+  background-color: pink;
+  flex-grow: 1;
+}
+
+.item:nth-child(even) {
+  background-color: cyan;
+  flex-grow: 2;
+}
+
+.item:nth-child(3) {
+  flex-grow: 4;
+}
+
+
+/*
+  Cantidad total de flex-grow
+  1
+  2
+  4
+  2
+  1
+  = 10
+
+  Calcular factor de crecimiento: (espacio disponible) / 10
+
+  Suponiendo que el espacio es 160px, entonces: 160 / 10 = 16
+
+  Teniendo el factor de crecimiento, el navegador los multiplica por el valor de flex-grow en cada paso y lo suma.
+
+  1 * 16 = 16
+  2 * 16 = 32
+  4 * 16 = 64
+  2 * 16 = 32
+  1 * 16 = 16
+
+
+*/

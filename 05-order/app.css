@@ -1,0 +1,35 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  font-size: 3em;
+  background-color: yellow;
+}
+
+.item {
+  background-color: pink;
+  flex-basis: 200px;
+  flex-shrink: 1;
+}
+
+.item:nth-child(even) {
+  background-color: cyan;
+}
+
+.item:nth-child(3) {
+  order: 7
+}
+
+.item:nth-child(8) {
+  order: 8;
+}
+
+.item:last-child {
+  order: 9;
+}
+
+
