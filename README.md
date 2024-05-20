@@ -352,3 +352,9 @@ La función `minmax()` nos ayuda a tener nuestros `grid-template-columns` y `gri
 El valor `auto-fit` se usa en la propiedad `grid-template-columns` o `grid-template-rows` junto con la función `repeat()` para crear un diseño flexible y dinámico. auto-fit permite que la cuadrícula se ajuste automáticamente al número de elementos disponibles, llenando el espacio disponible de la manera más eficiente posible.
 
  el valor `auto-fill` se usa junto con la función `repeat()` en las propiedades `grid-template-columns` o `grid-template-rows` para crear un diseño de cuadrícula flexible. La función de `auto-fill` es similar a `auto-fit`, pero con una diferencia clave en cómo manejan el espacio disponible.
+
+
+
+ ##### Diferencias entre auto-fit y auto-fill
+* `auto-fit`: Ajusta las columnas o filas para llenar el espacio disponible, expandiendo los elementos para ocupar el contenedor.
+* `auto-fill`: Mantiene las columnas o filas fijas para el número máximo de elementos, dejando espacios vacíos si no hay suficientes elementos para llenar el contenedor.
